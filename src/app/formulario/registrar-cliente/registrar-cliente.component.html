@@ -1,0 +1,163 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3" style="background-color: cadetblue">
+      <h6
+        class="m-0 font-weight-bold text-white text-center"
+        style="size: 13px"
+      >
+        Registro Del cliente
+      </h6>
+    </div>
+    <div
+      class="card-body"
+      style="
+        background: url('https://img.freepik.com/fotos-premium/excelente-barbero-cortando-pelo-su-cliente-satisfecho-generative-by-ai_894067-13888.jpg?w=740');
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.5);
+      "
+    >
+      <hr />
+
+      <div class="col-md-6 offset-md-3">
+        <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <button
+                class="btn btn-success text-center"
+                style="background-color: cadetblue"
+                routerLinkActive="active-link"
+                routerLink="/cliente"
+              >
+                Mantenimiento Cliente
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="form-group">
+            <label for="" class="text-white">Nombres:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombres"
+              formControlName="nombres"
+              [class.is-invalid]="nombreNoValido"
+              [(ngModel)]="cliente.nombres"
+              name="nombres"
+              placeholder="Ingrese su nombre"
+            />
+            <small *ngIf="nombreNoValido" class="text-danger"
+              >El nombre debe tener mas de 2 caracteres</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="">Apellidos:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="apellidos"
+              formControlName="apellidos"
+              [class.is-invalid]="apellidosNoValido"
+              [(ngModel)]="cliente.apellidos"
+              name="apellidos"
+              placeholder="ingrese su apellido"
+            />
+            <small *ngIf="apellidosNoValido" class="text-danger"
+              >El campo apellido es obligatorio</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="">Edad:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="edad"
+              formControlName="edad"
+              [class.is-invalid]="edadNoValido"
+              [(ngModel)]="cliente.edad"
+              name="edad"
+              placeholder="ingrese su edad"
+            />
+            <small *ngIf="edadNoValido" class="text-danger"
+              >El campo edad es obligatorio, debe ser un numero</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              [class.is-invalid]="emailNoValido"
+              [(ngModel)]="cliente.email"
+              name="email"
+              placeholder="example@gmail.com"
+            />
+            <small *ngIf="emailNoValido" class="text-danger"
+              >El campo email es obligatorio</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="">Telefono:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="telefono"
+              formControlName="telefono"
+              [class.is-invalid]="telefonoNoValido"
+              [(ngModel)]="cliente.telefono"
+              name="telefono"
+              placeholder="Ingrese el Telefono"
+            />
+            <small *ngIf="telefonoNoValido" class="text-danger"
+              >El campo telefono debe ser 9 numeros</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="">Direccion:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="direccion"
+              formControlName="direccion"
+              [class.is-invalid]="direccionNoValido"
+              [(ngModel)]="cliente.direccion"
+              name="direccion"
+              placeholder="Ingrese su direccion"
+            />
+            <small *ngIf="direccionNoValido" class="text-danger"
+              >El campo direccion es obligatorio</small
+            >
+          </div>
+          <div class="form-group">
+            <label class="text-white" for="estado">Estado:</label>
+            <select
+              class="form-control"
+              id="estado"
+              formControlName="estado"
+              [(ngModel)]="cliente.estado"
+              name="estado"
+              aria-placeholder="Activo(A) , Inactivo(I)"
+              [class.is-invalid]="estadoNoValido"
+            >
+              <option>A</option>
+              <option>I</option>
+            </select>
+            <small *ngIf="estadoNoValido" class="text-danger"
+              >El campo estado es obligatorio</small
+            >
+          </div>
+
+          <br />
+          <button class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

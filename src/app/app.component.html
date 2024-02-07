@@ -1,0 +1,15 @@
+<app-bienvenido *ngIf="shouldShowBody"></app-bienvenido>
+
+<app-body *ngIf="shouldShowBody"></app-body>
+
+<!-- Topbar -->
+<app-header *ngIf="shouldShowHeader"></app-header>
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+<app-register *ngIf="showregister"></app-register>
+<app-footer *ngIf="shouldShowFooter"></app-footer>
+<app-login *ngIf="showLogin"></app-login>
+<!-- End of Main Content -->

@@ -1,0 +1,538 @@
+
+<nav
+class="navbar navbar-expand-lg navbar-dark"
+style="background: black"
+id="mainNav"
+>
+<div class="container">
+  <a class="navbar-brand" href="#page-top"
+    ><img
+      src="./assets/img/logo_bar.png"
+      alt="..."
+      width="100"
+  /></a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarResponsive"
+    aria-controls="navbarResponsive"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    Menu
+
+    <i class="fas fa-bars ms-1"></i>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#Inicio"> Inicio</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#nosotros">Nosotros</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#services">Servicios</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#team">Equipo</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </li>
+
+      <div class="nav-item dropdown" sec:authorize="isAuthenticated()">
+        <a
+          class="nav-link btn-outline-warning dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style="margin-right: 20px"
+        >
+          <span sec:authentication="usuario.username">Acciones</span>
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a
+              class="dropdown-item"
+              routerLinkActive="active-link"
+              routerLink="/login"
+              >Iniciar Sesion</a
+            >
+          </li>
+
+          <form>
+            <button
+              class="dropdown-item"
+              routerLinkActive="active-link "
+              routerLink=""
+            >
+              Cerrar Sesion
+            </button>
+          </form>
+        </ul>
+      </div>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<header class="masthead">
+<div class="container">
+
+  <h3>ES MÁS QUE UN SIMPLE CORTE
+   </h3>
+  <h1>  VIVÍ UNA EXPERIENCIA</h1>
+<h1>    DIFERENTE
+</h1>
+</div>
+</header>
+
+<!-- Sobrfe Mi -->
+
+<div style=" background-color: black; color: white;" id="nosotros" class="pt-5 pb-4">
+<!-- <h1 class="section-heading text-center" style="color: blue">Nosotros</h1> -->
+
+<div class="text-center" style="color: white;">
+  <div class="row mt-4" style="margin: 0; padding-top: 0%">
+    <div class="section-heading col-lg-6 col-sm-6 mb-4">
+      <div class="d-flex  justify-content-evenly align-items-center"  >
+        <h1>Vision</h1>
+        <img src="../../../assets/img/icons/vision.png" style=" background-color: white;" width="100" height="100"  alt="vision">
+      </div>
+      <p class="text-muted">
+        Ser la principal barbería en nuestra comunidad, destacando por la excelencia en servicio y habilidad artística. Establecemos estándares de calidad, siendo líderes en innovación y compromiso comunitario. Creamos un ambiente donde la autenticidad se celebra, asegurando que cada cliente forme parte de nuestra familia de barbería.
+      </p>
+    </div>
+
+    <div class="section-heading col-lg-6 col-sm-6 mb-4">
+      <div class="d-flex  justify-content-evenly align-items-center">
+        <h1>Misión</h1>
+        <img style=" background-color: white;" src="../../../assets/img/icons/mision.png "  width="100" height="100"  alt="vision">
+      </div>
+      <p class="text-muted">
+        Proporcionar a nuestros clientes experiencias excepcionales de barbería con servicios de alta calidad en un ambiente acogedor. Nos comprometemos a resaltar la individualidad de cada cliente, reflejando su estilo único. Buscamos superar expectativas, fomentar la confianza y garantizar la satisfacción en cada visita.
+      </p>
+    </div>
+
+    <!--<div class="section-heading col-lg-4 col-sm-6 mb-4">
+      <h1>Objetivos</h1>
+    </div>-->
+  </div>
+</div>
+</div>
+
+<!-- Portfolio Gbrid-->
+
+<section class="page-section bg-light" id="portfolio">
+<div class="container" id="services">
+  <div class="text-center">
+    <h2 class="section-heading text-uppercase">Servicios</h2>
+
+    <h3 class="section-subheading text-muted">
+      Tenemos todo tipo de servicio para tu agrado.
+    </h3>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio item 1-->
+
+      <div class="portfolio-item" [routerLink]="['/login']">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal1"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://th.bing.com/th/id/R.c2cee09b6587268e195ba6425a4799a2?rik=IYyAJzIBUblXww&pid=ImgRaw&r=0"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">Degradados</div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/.15.00
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 mb-4" [routerLink]="['/login']">
+      <!-- Portfolio item 3-->
+
+      <div class="portfolio-item">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal3"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://i.pinimg.com/originals/04/d1/3d/04d13dd07612f9c9e07ea8118b5f88f0.jpg"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">Corte Clasico</div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/.10.00
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio item 2-->
+
+      <div class="portfolio-item" [routerLink]="['/login']">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal2"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://homensquesecuidam.com/wp-content/uploads/2019/11/cabelo-platinado-masculino-2020-homens-que-se-cuidam-h-595xh.jpg"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">Colorometria</div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/.35.00
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+      <!-- Portfolio item 5-->
+
+      <div class="portfolio-item" [routerLink]="['/login']">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal5"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://image.freepik.com/foto-gratis/hombre-joven-corte-pelo-moda-peluqueria-barber-hace-peinado-barba_179755-4041.jpg"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">
+            Perfilado y degradado Barba
+          </div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/. 10.00
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+      <!-- Portfolio item 4-->
+
+      <div class="portfolio-item" [routerLink]="['/login']">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal4"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://i.pinimg.com/736x/e9/3d/b2/e93db2c9eafb1fffa9fc1d2c5bd76a9f.jpg"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">Ondulaciones</div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/.30.00
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6">
+      <!-- Portfolio item 6-->
+
+      <div class="portfolio-item" [routerLink]="['/login']">
+        <a
+          class="portfolio-link"
+          data-bs-toggle="modal"
+          href="#portfolioModal6"
+        >
+          <div class="portfolio-hover">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
+            </div>
+          </div>
+
+          <img
+            class="img-fluid"
+            src="https://th.bing.com/th/id/OIP.QXblAt2zAwLnx0IN-UDTeAAAAA?rs=1&pid=ImgDetMain"
+            alt="..."
+          />
+        </a>
+
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">Tratamiento Facial</div>
+
+          <div class="portfolio-caption-subheading text-muted">
+            S/.15.00
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Team-->
+
+<section class="page-section bg-light" id="team">
+<div class="container">
+  <div class="text-center">
+    <h2 class="section-heading text-uppercase">Equipo de Trabajo</h2>
+
+    <h3 class="section-subheading text-muted">
+      Contamos con los mejores en el cuidado de la belleza masculina
+    </h3>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="team-member">
+        <img
+          class="mx-auto rounded-circle"
+          src="assets/img/team/1.jpg"
+          alt="..."
+        />
+
+        <h4>Marco Santamaria</h4>
+
+        <p class="text-muted">Barbero Principal</p>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Parveen Anand Twitter Profile"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Parveen Anand Facebook Profile"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Parveen Anand LinkedIn Profile"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="team-member">
+        <img
+          class="mx-auto rounded-circle"
+          src="assets/img/team/2.jpg"
+          alt="..."
+        />
+
+        <h4>Diana Gómez</h4>
+
+        <p class="text-muted">Asistente de Barbería</p>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Diana Petersen Twitter Profile"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Diana Petersen Facebook Profile"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Diana Petersen LinkedIn Profile"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="team-member">
+        <img
+          class="mx-auto rounded-circle"
+          src="assets/img/team/3.jpg"
+          alt="..."
+        />
+
+        <h4>Juan Mendoza</h4>
+
+        <p class="text-muted">Barbero</p>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Larry Parker Twitter Profile"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Larry Parker Facebook Profile"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <a
+          class="btn btn-dark btn-social mx-2"
+          href="#!"
+          aria-label="Larry Parker LinkedIn Profile"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-lg-8 mx-auto text-center">
+      <p class="large text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+        eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam
+        corporis ea, alias ut unde.
+      </p>
+    </div>
+  </div> -->
+</div>
+</section>
+
+<footer
+class="footer text-center"
+style="background: black; padding: 20px; color: white"
+id="contacto"
+>
+<div class="container">
+  <div class="row">
+    <!-- Mapa de Google -->
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31715.388761058974!2d-79.85240255000001!3d-6.4679022999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904c9bd8fa707971%3A0x96ee36c20a02d557!2sIllimo!5e0!3m2!1ses-419!2spe!4v1696192210290!5m2!1ses-419!2spe"
+      width="100%"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <hr />
+
+    <div class="col-md">
+      <!-- Enlaces a redes sociales -->
+
+      <a
+        class="btn btn-primary btn-social mx-2"
+        href="https://www.facebook.com/MarcoSantamariaCajusol"
+        aria-label="Facebook"
+        target="_blank"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a
+        class="btn btn-success btn-social mx-2"
+        href="https://api.whatsapp.com/send?phone=994245359"
+        aria-label="WhatsApp"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a
+        class="btn btn-danger btn-social mx-2"
+        href="https://www.instagram.com/"
+        aria-label="Instagram"
+        target="_blank"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <p class="text-white">
+        Todos los derechos reservados al programador &copy; Marco Antonio
+        Santamaria Cajusol
+      </p>
+    </div>
+  </div>
+</div>
+</footer>
+

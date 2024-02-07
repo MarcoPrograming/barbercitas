@@ -1,0 +1,174 @@
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <div class="row">
+                            <div class="col-lg-8">
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Empleados</h6>
+                        </div>
+                        <div class="col-lg-4">
+                            <button class="btn btn-success" style="background: darkgreen;"
+                            routerLinkActive="active-link" routerLink="/RegistrarEmpleado" >Registrar</button>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <hr>
+
+                                <table datatable [dtOptions]="dtoptions" [dtTrigger]="dtTrigger" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Cargo</th>
+                                            <th scope="col">Horario</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellidos</th>
+                                            <th scope="col">Dni</th>
+                                            <th scope="col">Edad</th>
+                                            <th scope="col">correo</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Direccion</th>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Fecha Creacion</th>
+                                            <th scope="col">Fecha Actualizacion</th>
+                                            <th scope="col">Editar</th>
+                                            <th scope="col">Eliminar</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let empleado of empleado; let id=index">
+                                            <th scope="row">{{id +1}}</th>
+                                            <td>{{empleado.cargo}}</td>
+                                            <td>{{empleado.horario}}</td>
+                                            <td>{{empleado.nombre}}</td>
+                                            <td>{{empleado.apellidos}}</td>
+                                            <td>{{empleado.dni}}</td>
+                                            <td>{{empleado.edad}}</td>
+                                            <td>{{empleado.correo}}</td>
+                                            <td>{{empleado.telefono}}</td>
+                                            <td>{{empleado.direccion}}</td>
+                                            <td [ngStyle]="getEstadoStyle(empleado.estado)">{{empleado.estado}}</td>
+                                            <td>{{empleado.fecha_creacion}}</td>
+                                            <td>{{empleado.fecha_actualizacion}}</td>
+                                            <td>
+                                                <button (click)="seleccionarEmpleado(id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalEdit">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                 </button>
+                                            </td>
+                                            <td>
+                                                <button (click)="eliminarEmpleado(empleado.id_empleado,id)"
+                                                    class="btn btn-danger "> <i class="bi bi-trash3-fill"></i>
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content"      style="background: url('https://th.bing.com/th/id/OIP.hFDFpKinSwBRgv3llty_UQHaE8?pid=ImgDet&rs=1');
+            background-size: cover; 
+            height: 100%;
+            width: 100%;
+            position: relative; background-color: rgba(0, 0, 0, 0.5);">
+        
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Empleado</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form action="row g-3" (ngSubmit)="actualizarEmpleado(id)" [formGroup]="formulario">
+                            <div class="row">
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Cargo</label>
+                                <input type="text" class="form-control" formControlName="cargo" name="info.cargo"
+                                    [(ngModel)]="info.cargo">
+    
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Horario</label>
+                                <input type="text" class="form-control" formControlName="nombre" name="info.horario"
+                                    [(ngModel)]="info.nombre">
+    
+                            </div>
+                        </div>
+
+                            <div class="col-md-12">
+                                <label for="inputEmail4" class="form-label">Nombres</label>
+                                <input type="text" class="form-control" formControlName="nombre" name="info.nombre"
+                                    [(ngModel)]="info.nombre">
+    
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputEmail4" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" formControlName="apellidos" name="info.apellidos"
+                                    [(ngModel)]="info.apellidos">
+                            </div>
+    
+    
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Edad</label>
+                                <input type="number" class="form-control" formControlName="edad" name="info.edad"
+                                    [(ngModel)]="info.edad">
+    
+                            </div>
+    
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Correo</label>
+                                <input type="email" class="form-control" formControlName="email" name="info.correo"
+                                    [(ngModel)]="info.email">
+    
+                            </div>
+    
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" formControlName="telefono" name="info.telefono"
+                                    [(ngModel)]="info.telefono">
+    
+                            </div>
+    
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" formControlName="direccion" name="info.direccion"
+                                    [(ngModel)]="info.direccion">
+    
+                            </div>
+                            <div class="col-12">
+                                    <label class="text-white" for="estado">Estado:</label>
+                                    <select class="form-control" id="estado" formControlName="estado"
+                                        [(ngModel)]="info.estado" name="estado"
+                                        aria-placeholder="Activo(A) , Inactivo(I)">
+                                        <option>A </option>
+                                        <option>I</option>
+                                    </select>
+    
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Editar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
